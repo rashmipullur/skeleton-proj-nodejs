@@ -5,19 +5,15 @@ const userControllers = require('../controllers/user.controller')
 
 
 // -----------------------------Authentication-----------------------------
-router.get('/status', (request, response) => {
-    const status = {
-       "Status": "Running"
-    };
-    console.log("heeeeeeeeeeeeeeeeeere");
-    response.send(status);
- });
 router.post('/signup', userControllers.signup) // signup
-// verify otp
-// resentOtp
-// sign in
-// forgot password
-// verify forgot password otp
-// setnewpassword
+router.post('/verifyOtp', userControllers.verifyOtp) // verify otp
+router.post('/resendOtp', userControllers.resendOtp) // resentOtp
+router.post('/signin', userControllers.signin) // sign in
+router.post('/forgotPassword', userControllers.forgotPassword) // forgot password
+router.put('/setNewPassword',  userControllers.setNewPassword) // setnewpassword
+
+
+
+
 
 module.exports = router
